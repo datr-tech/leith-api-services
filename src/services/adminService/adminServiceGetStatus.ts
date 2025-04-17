@@ -1,5 +1,5 @@
-import { ports } from '@freight/common-api-ports-config';
 import { IAdminServiceGetStatus } from '@app/interfaces/adminService';
+import { ports } from '@datr.tech/leith-config-api-ports';
 
 export const adminServiceGetStatus: IAdminServiceGetStatus = async ({ statusId }) => {
   const serviceName = 'admin';

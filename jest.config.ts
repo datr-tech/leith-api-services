@@ -1,12 +1,6 @@
 export default {
-  coveragePathIgnorePatterns: [
-		'<rootDir>/.jest',
-		'<rootDir>/test/fixtures'
-	],
-  coverageReporters: [
-		'lcov',
-		'json-summary'
-	],
+  coveragePathIgnorePatterns: ['<rootDir>/.jest', '<rootDir>/test/fixtures'],
+  coverageReporters: ['lcov', 'json-summary'],
   coverageThreshold: {
     global: {
       branches: 0,
@@ -20,9 +14,7 @@ export default {
     '@appTest/(.*)': '<rootDir>/test/$1',
   },
   preset: 'ts-jest',
-  setupFilesAfterEnv: [
-		'<rootDir>/.jest/setupPaths.ts'
-	],
+  setupFilesAfterEnv: ['<rootDir>/.jest/setupPaths.ts'],
   testEnvironment: 'node',
   testPathIgnorePatterns: [
     '<rootDir>/.github/',

@@ -1,4 +1,4 @@
-import { ports } from '@freight/common-api-ports-config';
+import { ports } from '@datr.tech/leith-config-api-ports';
 
 export const entityServiceGetService = async ({ serviceId }) => {
   const serviceName = 'entity';

@@ -1,4 +1,4 @@
-import { ports } from '@freight/common-api-ports-config';
+import { ports } from '@datr.tech/leith-config-api-ports';
 
 describe('ports', () => {
   describe('positive', () => {
