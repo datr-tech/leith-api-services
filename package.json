@@ -1,6 +1,6 @@
 {
   "name": "@datr.tech/leith-api-services",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "private": false,
   "description": "A common leith package of API services",
   "keywords": [
