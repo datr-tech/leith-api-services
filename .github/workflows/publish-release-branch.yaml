@@ -35,7 +35,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
           scope: '@datr.tech'
       - run: npm ci
-      - run: npm build
+      - run: npm run build
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
