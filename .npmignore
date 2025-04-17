@@ -2,6 +2,7 @@
 .prettierignore
 .prettierrc
 
+CHANGELOG.md
 commitlint.config.js
 cspell.json
 eslint.config.mjs
