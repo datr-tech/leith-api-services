@@ -2,10 +2,13 @@
   "name": "@datr.tech/leith-api-services",
   "version": "0.3.3",
   "private": false,
-  "description": "A common leith package of API services",
+  "description": "A Leith repo of API services",
   "keywords": [
+    "api",
     "datr.tech",
-    "leith"
+    "leith",
+    "typescript",
+    "services"
   ],
   "homepage": "https://github.com/datr.tech/leith-api-services",
   "repository": {
@@ -22,7 +25,6 @@
     "types": "./dist/src/index.d.ts"
   },
   "scripts": {
-    "badges": "coverage-badges",
     "prebuild": "npm run clean",
     "build": "npx webpack --mode production",
     "prechangelog": "git add ./package.json",
@@ -49,7 +51,7 @@
     "test": "npm run test:unit"
   },
   "dependencies": {
-    "@datr.tech/leith-config-api-ports": "^0.3.1",
+    "@datr.tech/leith-config-api-ports": "^0.3.2",
     "@types/node": "^22.7.6"
   },
   "devDependencies": {

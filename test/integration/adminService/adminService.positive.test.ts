@@ -1,6 +1,6 @@
 import { adminService } from '../../../dist';
 
-describe('sdminService', () => {
+describe('adminService', () => {
   describe('positive', () => {
     test('should contain the expected functions', () => {
       // Arrange
