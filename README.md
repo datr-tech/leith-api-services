@@ -1,1 +1,1 @@
-## @datr.tech/leith-api-services
+## @datr.tech/leith-common-services

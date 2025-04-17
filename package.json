@@ -1,8 +1,8 @@
 {
-  "name": "@datr.tech/leith-api-services",
+  "name": "@datr.tech/leith-common-services",
   "version": "0.3.6",
   "private": false,
-  "description": "A Leith repo of API services",
+  "description": "Leith common services",
   "keywords": [
     "api",
     "datr.tech",
@@ -10,10 +10,10 @@
     "typescript",
     "services"
   ],
-  "homepage": "https://github.com/datr.tech/leith-api-services",
+  "homepage": "https://github.com/datr.tech/leith-common-services",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/datr.tech/leith-api-services.git"
+    "url": "git+https://github.com/datr.tech/leith-common-services.git"
   },
   "license": "MIT",
   "author": "admin <admin@datr.tech>",
