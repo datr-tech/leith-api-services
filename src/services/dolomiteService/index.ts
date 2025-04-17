@@ -1,0 +1,1 @@
+export { dolomiteService } from './dolomiteService';

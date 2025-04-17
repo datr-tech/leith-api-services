@@ -1,0 +1,16 @@
+.editorconfig
+.prettierignore
+.prettierrc
+
+commitlint.config.js
+eslint.config.mjs
+jest.config.ts
+tsconfig.json
+webpack.config.mjs
+
+.github/
+.husky/
+
+coverage/
+src/
+test/

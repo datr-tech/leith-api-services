@@ -1,0 +1,1 @@
+export { IAdminServiceGetStatus } from './IAdminServiceGetStatus';

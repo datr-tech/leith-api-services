@@ -1,0 +1,1 @@
+export { procService } from './procService';
