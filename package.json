@@ -15,6 +15,7 @@
   "license": "MIT",
   "author": "admin <admin@datr.tech>",
   "type": "module",
+  "main": "./dist/index.js",
   "exports": {
     "default": "./dist/index.js",
     "development": "./src/index.ts",
