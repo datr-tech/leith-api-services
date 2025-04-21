@@ -1,4 +1,4 @@
-import { IAdminServiceGetStatus } from '@app/interfaces/adminService';
+import { IAdminServiceGetStatus } from '@app-leith-common-services/interfaces/adminService';
 import { ports } from '@datr.tech/leith-config-api-ports';
 
 export const adminServiceGetStatus: IAdminServiceGetStatus = async ({ statusId }) => {
