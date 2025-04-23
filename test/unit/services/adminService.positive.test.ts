@@ -1,4 +1,4 @@
-import { adminService } from '@app/services';
+import { adminService } from '@app-lcs/services';
 
 describe('adminService', () => {
   describe('positive', () => {
