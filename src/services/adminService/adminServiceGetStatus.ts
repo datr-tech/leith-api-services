@@ -36,7 +36,7 @@ export const adminServiceGetStatus: IAdminServiceGetStatus = async ({ statusId }
     /*
      * Check the validity of the fetch response.
      * When successful, extract a JSON object from the response.
-		 * Otherwise, throw an error.
+     * Otherwise, throw an error.
      */
     if (!response.ok) throw new Error('response: invalid');
     const json = await response.json();
