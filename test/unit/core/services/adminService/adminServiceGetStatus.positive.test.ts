@@ -28,8 +28,8 @@ describe('adminServiceGetStatus', () => {
        * 'generateServiceUrl' in order to construct an API
        * url, whose responses will be mocked using 'Nock'. The
        * ObjectId value will also be used within the unit test,
-       * itself, begin passed to 'getStatus' as the expected
-       * param, 'statusId'.
+       * itself, being passed, ultimately, to 'getStatus' as
+			 * the expected param, 'statusId'.
        */
       id = new Types.ObjectId();
       mockReturnValue = 'TEST_RETURN_VALUE';
@@ -45,8 +45,7 @@ describe('adminServiceGetStatus', () => {
       const url = generateServiceUrl({ id, methodEnum, serviceEnum });
 
       /*
-       * Mock a single positive response
-       * from the generated url.
+       * Mock a single, 200 status response from the generated url.
        */
       nock(url).get('').times(1).reply(200, {
         status: mockReturnValue,

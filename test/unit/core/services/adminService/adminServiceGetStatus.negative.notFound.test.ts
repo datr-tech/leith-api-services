@@ -6,19 +6,18 @@ import { Types } from 'mongoose';
 import nock from 'nock';
 
 /**
- * adminServiceGetStatus.negative.internalServiceError
+ * adminServiceGetStatus.negative.notFound
  *
  * A single test of 'adminService.getStatus', where
- * a 500 (internal server error) response from the
- * assocated API will be mocked within the 'beforeAll'
- * function.
+ * a 404 (not found) response from the assocated API
+ * will be mocked within the 'beforeAll' function.
  *
  * @author Datr.Tech Admin <admin@datr.tech>
  * @version 0.4.1
  */
 describe('adminServiceGetStatus', () => {
   let id;
-  describe('negative.internalServiceError', () => {
+  describe('negative.notFound', () => {
     /*
      * DEFINE MOCK
      */
@@ -44,9 +43,9 @@ describe('adminServiceGetStatus', () => {
       const url = generateServiceUrl({ id, methodEnum, serviceEnum });
 
       /*
-       * Mock a single, 500 status response from the generated url.
+       * Mock a single, 404 status response from the generated url.
        */
-      nock(url).get('').times(1).reply(500);
+      nock(url).get('').times(1).reply(404);
     });
     afterEach(() => {
       nock.cleanAll();
@@ -65,15 +64,15 @@ describe('adminServiceGetStatus', () => {
       /*
        * Act
        */
-      const stat = await adminService.getStatus({ statusId });
-      const { error, payload } = stat as IAdminServiceGetStatusOutputError;
-      const { message } = payload;
+      const stat = await adminService.getStatus({ statusId }) as IAdminServiceGetStatusOutputError;
+      const errorFound = stat.error;
+      const messageFound = stat.payload.message;
 
       /*
        * Assert
        */
-      expect(error).toEqual(errorExpected);
-      expect(message).toEqual(messageExpected);
+      expect(errorFound).toEqual(errorExpected);
+      expect(messageFound).toEqual(messageExpected);
     });
   });
 });
