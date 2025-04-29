@@ -9,7 +9,7 @@ import nock from 'nock';
  * adminServiceGetStatus.positive
  *
  * A single test of 'adminService.getStatus', where
- * a positive response from the assocated API will be
+ * a positive response from the associated API will be
  * mocked within the 'beforeAll' function.
  *
  * @author Datr.Tech Admin <admin@datr.tech>
@@ -29,7 +29,7 @@ describe('adminServiceGetStatus', () => {
        * url, whose responses will be mocked using 'Nock'. The
        * ObjectId value will also be used within the unit test,
        * itself, being passed, ultimately, to 'getStatus' as
-			 * the expected param, 'statusId'.
+       * the expected param, 'statusId'.
        */
       id = new Types.ObjectId();
       mockReturnValue = 'TEST_RETURN_VALUE';

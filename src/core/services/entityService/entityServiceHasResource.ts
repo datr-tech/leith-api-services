@@ -1,7 +1,6 @@
+import { IEntityServiceHasResource } from '@app-lcs/interfaces/core/services';
 import { entityServiceGetResource } from './entityServiceGetResource';
 
-export const entityServiceHasResource = async ({ resourceId }) => {
-  const resource = await entityServiceGetResource({ resourceId });
-
-  return !!resource;
-};
+export const entityServiceHasResource: IEntityServiceHasResource = async ({
+  resourceId,
+}) => (await entityServiceGetResource({ resourceId })).error === false;

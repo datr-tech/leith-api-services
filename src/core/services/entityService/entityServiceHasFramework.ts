@@ -1,7 +1,6 @@
+import { IEntityServiceHasFramework } from '@app-lcs/interfaces/core/services';
 import { entityServiceGetFramework } from './entityServiceGetFramework';
 
-export const entityServiceHasFramework = async ({ frameworkId }) => {
-  const framework = await entityServiceGetFramework({ frameworkId });
-
-  return !!framework;
-};
+export const entityServiceHasFramework: IEntityServiceHasFramework = async ({
+  frameworkId,
+}) => (await entityServiceGetFramework({ frameworkId })).error === false;

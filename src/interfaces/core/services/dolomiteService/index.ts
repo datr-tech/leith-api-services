@@ -8,3 +8,9 @@ export { IDolomiteServiceGetJourneyInput } from './IDolomiteServiceGetJourneyInp
 export { IDolomiteServiceGetJourneyOutput } from './IDolomiteServiceGetJourneyOutput';
 export { IDolomiteServiceGetJourneyOutputError } from './IDolomiteServiceGetJourneyOutputError';
 export { IDolomiteServiceGetJourneyOutputSuccess } from './IDolomiteServiceGetJourneyOutputSuccess';
+export { IDolomiteServiceHasHop } from './IDolomiteServiceHasHop';
+export { IDolomiteServiceHasHopInput } from './IDolomiteServiceHasHopInput';
+export { IDolomiteServiceHasHopOutput } from './IDolomiteServiceHasHopOutput';
+export { IDolomiteServiceHasJourney } from './IDolomiteServiceHasJourney';
+export { IDolomiteServiceHasJourneyInput } from './IDolomiteServiceHasJourneyInput';
+export { IDolomiteServiceHasJourneyOutput } from './IDolomiteServiceHasJourneyOutput';

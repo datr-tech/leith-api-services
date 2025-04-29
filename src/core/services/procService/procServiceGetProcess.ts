@@ -1,25 +1,39 @@
-import { ports } from '@datr.tech/leith-config-api-ports';
+import { MethodEnum, ServiceEnum, TargetFieldEnum } from '@app-lcs/core/config';
+import { fetchGetFieldById } from '@app-lcs/core/fetch';
+import { IProcServiceGetProcess } from '@app-lcs/interfaces/core/services';
 
-export const procServiceGetProcess = async ({ processId }) => {
-  const serviceName = 'proc';
-  const port = ports[serviceName];
-  const uri = `http://localhost:${port}/${serviceName}/api/v1/process/${processId}`;
+/**
+ * procServiceGetProcess
+ *
+ * Retrieve the api-proc value associated with the received 'processId' param.
+ *
+ * @param {IProcServiceGetProcessInput} params
+ * @param {Types.ObjectId} params.processId
+ *
+ * @returns { Promise<IProcServiceGetProcessOutput> }
+ * @returns { Promise<IProcServiceGetProcessOutputError> } ON ERROR: Promise<{ error: true, payload: { message }}>
+ * @returns { Promise<IProcServiceGetProcessOutputSuccess> } ON SUCCESS: Promise<{ error: false, payload: { process }}>
+ *
+ * @author Datr.Tech Proc <proc@datr.tech>
+ * @version 0.4.1
+ */
+export const procServiceGetProcess: IProcServiceGetProcess = async ({ processId }) => {
+  /*
+   * Assemble the required params for the 'fetchGetFieldById' call.
+   */
+  const methodEnum = MethodEnum.process;
+  const serviceEnum = ServiceEnum.proc;
+  const targetFieldEnum = TargetFieldEnum.process;
 
-  const response = await fetch(uri, {
-    method: 'get',
-    headers: { 'Content-Type': 'application/json' },
+  /*
+   * Retrieve the value of the target field,
+   * 'targetFieldEnum, within the standard
+   * response object, stat.
+   */
+  return await fetchGetFieldById({
+    id: processId,
+    methodEnum,
+    serviceEnum,
+    targetFieldEnum,
   });
-
-  if (!response.ok) {
-    throw new Error(`Response status: ${response.status}`);
-  }
-
-  const json = await response.json();
-  let proc;
-
-  if (json && typeof json['process'] !== 'undefined') {
-    proc = json['process'];
-  }
-
-  return proc;
 };

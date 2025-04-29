@@ -5,28 +5,56 @@ import { IDolomiteServiceGetHopOutputError } from '@app-lcs/interfaces/core/serv
 import { Types } from 'mongoose';
 import nock from 'nock';
 
-/*
- * Generate a url for the dolomite service,
- * where 'id' will be the expected param.
+/**
+ * dolomiteServiceGetHop.negative.internalServiceError
+ *
+ * A single test of 'dolomiteService.getHop', where
+ * a 500 (internal server error) response from the
+ * associated API will be mocked within the 'beforeAll'
+ * function.
+ *
+ * @author Datr.Tech Dolomite <dolomite@datr.tech>
+ * @version 0.4.1
  */
-const id = new Types.ObjectId();
-const methodEnum = MethodEnum.hop;
-const serviceEnum = ServiceEnum.dolomite;
-const url = generateServiceUrl({ id, methodEnum, serviceEnum });
-
 describe('dolomiteServiceGetHop', () => {
+  let id;
   describe('negative.internalServiceError', () => {
+    /*
+     * DEFINE MOCK
+     */
     beforeAll(() => {
       /*
-       * Mock a single positive response
-       * from the generated url.
+       * Create an ObjectId value, which will be passed to
+       * 'generateServiceUrl' in order to construct an API
+       * url, whose responses will be mocked using 'Nock'. The
+       * ObjectId value will also be used within the unit test,
+       * itself, being passed, ultimately, to 'getHop' as
+       * the expected param, 'statusId'.
+       */
+      id = new Types.ObjectId();
+      const methodEnum = MethodEnum.hop;
+      const serviceEnum = ServiceEnum.dolomite;
+
+      /*
+       * Generate a url, which will be used to
+       * mock the expected 'dolomiteService' call
+       * (within the unit test defined below),
+       * and where 'id' will be the expected param.
+       */
+      const url = generateServiceUrl({ id, methodEnum, serviceEnum });
+
+      /*
+       * Mock a single, 500 status response from the generated url.
        */
       nock(url).get('').times(1).reply(500);
     });
     afterEach(() => {
       nock.cleanAll();
     });
-    test('should return stat.error = true', async () => {
+    /*
+     * PERFORM TEST
+     */
+    test("should return 'stat.error' = true and 'stat.payload.message' = 'response: invalid'", async () => {
       /*
        * Arrange
        */

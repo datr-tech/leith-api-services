@@ -1,12 +1,5 @@
+import { IPersonaServiceHasUser } from '@app-lcs/interfaces/core/services';
 import { personaServiceIsUserValid } from './personaServiceIsUserValid';
 
-export const personaServiceHasUser = async ({ userId, isAdmin }) => {
-  const isAdminLocal = typeof isAdmin !== 'undefined' ? isAdmin : false;
-
-  const isUserValid = await personaServiceIsUserValid({
-    userId,
-    isAdmin: isAdminLocal,
-  });
-
-  return isUserValid;
-};
+export const personaServiceHasUser: IPersonaServiceHasUser = async ({ userId }) =>
+  (await personaServiceIsUserValid({ userId })).error === false;

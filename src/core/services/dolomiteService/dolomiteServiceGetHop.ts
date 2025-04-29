@@ -1,10 +1,6 @@
 import { MethodEnum, ServiceEnum, TargetFieldEnum } from '@app-lcs/core/config';
 import { fetchGetFieldById } from '@app-lcs/core/fetch';
-import {
-  IDolomiteServiceGetHop,
-  IDolomiteServiceGetHopOutputError,
-  IDolomiteServiceGetHopOutputSuccess,
-} from '@app-lcs/interfaces/core/services';
+import { IDolomiteServiceGetHop } from '@app-lcs/interfaces/core/services';
 
 /**
  * dolomiteServiceGetHop

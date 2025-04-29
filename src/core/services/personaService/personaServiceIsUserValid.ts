@@ -1,29 +1,41 @@
-import { ports } from '@datr.tech/leith-config-api-ports';
+import { MethodEnum, ServiceEnum, TargetFieldEnum } from '@app-lcs/core/config';
+import { fetchGetFieldById } from '@app-lcs/core/fetch';
+import { IPersonaServiceIsUserValid } from '@app-lcs/interfaces/core/services';
 
-export const personaServiceIsUserValid = async ({ userId, isAdmin }) => {
-  const serviceName = 'persona';
-  const port = ports[serviceName];
-  let uri = `http://localhost:${port}/${serviceName}/api/v1/user/${userId}/validity`;
+/**
+ * personaServiceIsUserValid
+ *
+ * Retrieve the api-persona value associated with the received 'userId' param.
+ *
+ * @param {IPersonaServiceIsUserValidInput} params
+ * @param {Types.ObjectId} params.validityId
+ *
+ * @returns { Promise<IPersonaServiceIsUserValidOutput> }
+ * @returns { Promise<IPersonaServiceIsUserValidOutputError> } ON ERROR: Promise<{ error: true, payload: { message }}>
+ * @returns { Promise<IPersonaServiceIsUserValidOutputSuccess> } ON SUCCESS: Promise<{ error: false, payload: { validity }}>
+ *
+ * @author Datr.Tech Persona <persona@datr.tech>
+ * @version 0.4.1
+ */
+export const personaServiceIsUserValid: IPersonaServiceIsUserValid = async ({
+  userId,
+}) => {
+  /*
+   * Assemble the required params for the 'fetchGetFieldById' call.
+   */
+  const methodEnum = MethodEnum.user;
+  const serviceEnum = ServiceEnum.persona;
+  const targetFieldEnum = TargetFieldEnum.validity;
 
-  if (isAdmin) {
-    uri += '?admin=true';
-  }
-
-  const response = await fetch(uri, {
-    method: 'get',
-    headers: { 'Content-Type': 'application/json' },
+  /*
+   * Retrieve the value of the target field,
+   * 'targetFieldEnum, within the standard
+   * response object, stat.
+   */
+  return await fetchGetFieldById({
+    id: userId,
+    methodEnum,
+    serviceEnum,
+    targetFieldEnum,
   });
-
-  if (!response.ok) {
-    throw new Error(`Response status: ${response.status}`);
-  }
-
-  const json = await response.json();
-  let validity;
-
-  if (json && typeof json['validity'] !== 'undefined') {
-    validity = json['validity'];
-  }
-
-  return validity;
 };

@@ -1,0 +1,16 @@
+export { IProcServiceGetProcess } from './IProcServiceGetProcess';
+export { IProcServiceGetProcessInput } from './IProcServiceGetProcessInput';
+export { IProcServiceGetProcessOutput } from './IProcServiceGetProcessOutput';
+export { IProcServiceGetProcessOutputError } from './IProcServiceGetProcessOutputError';
+export { IProcServiceGetProcessOutputSuccess } from './IProcServiceGetProcessOutputSuccess';
+export { IProcServiceGetThread } from './IProcServiceGetThread';
+export { IProcServiceGetThreadInput } from './IProcServiceGetThreadInput';
+export { IProcServiceGetThreadOutput } from './IProcServiceGetThreadOutput';
+export { IProcServiceGetThreadOutputError } from './IProcServiceGetThreadOutputError';
+export { IProcServiceGetThreadOutputSuccess } from './IProcServiceGetThreadOutputSuccess';
+export { IProcServiceHasProcess } from './IProcServiceHasProcess';
+export { IProcServiceHasProcessInput } from './IProcServiceHasProcessInput';
+export { IProcServiceHasProcessOutput } from './IProcServiceHasProcessOutput';
+export { IProcServiceHasThread } from './IProcServiceHasThread';
+export { IProcServiceHasThreadInput } from './IProcServiceHasThreadInput';
+export { IProcServiceHasThreadOutput } from './IProcServiceHasThreadOutput';

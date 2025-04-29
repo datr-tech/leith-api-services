@@ -1,10 +1,6 @@
 import { MethodEnum, ServiceEnum, TargetFieldEnum } from '@app-lcs/core/config';
 import { fetchGetFieldById } from '@app-lcs/core/fetch';
-import {
-  IEntityServiceGetResource,
-  IEntityServiceGetResourceOutputError,
-  IEntityServiceGetResourceOutputSuccess,
-} from '@app-lcs/interfaces/core/services';
+import { IEntityServiceGetResource } from '@app-lcs/interfaces/core/services';
 
 /**
  * entityServiceGetResource

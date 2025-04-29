@@ -5,30 +5,60 @@ import { IEntityServiceGetFrameworkOutputError } from '@app-lcs/interfaces/core/
 import { Types } from 'mongoose';
 import nock from 'nock';
 
-/*
- * Generate a url for the admin service,
- * where 'id' will be the expected param.
+/**
+ * entityServiceGetFramework.negative.wrongResponse
+ *
+ * A single test of 'entityService.getFramework', where
+ * the associated API will be mocked within the 'beforeAll'
+ * function to return a positive, though incorrectly named
+ * response, leading to a "wrong response" error.
+ *
+ * @author Datr.Tech Entity <entity@datr.tech>
+ * @version 0.4.1
  */
-const id = new Types.ObjectId();
-const methodEnum = MethodEnum.framework;
-const serviceEnum = ServiceEnum.entity;
-const url = generateServiceUrl({ id, methodEnum, serviceEnum });
-
 describe('entityServiceGetFramework', () => {
+  let id;
   describe('negative.wrongResponse', () => {
+    /*
+     * DEFINE MOCK
+     */
     beforeAll(() => {
       /*
-       * Mock a single positive response
-       * from the generated url.
+       * Create an ObjectId value, which will be passed to
+       * 'generateServiceUrl' in order to construct an API
+       * url, whose responses will be mocked using 'Nock'. The
+       * ObjectId value will also be used within the unit test,
+       * itself, being passed, ultimately, to 'getFramework' as
+       * the expected param, 'frameworkId'.
+       */
+      id = new Types.ObjectId();
+      const methodEnum = MethodEnum.framework;
+      const serviceEnum = ServiceEnum.entity;
+
+      /*
+       * Generate a url, which will be used to
+       * mock the expected 'entityService' call
+       * (within the unit test defined below),
+       * and where 'id' will be the expected param.
+       */
+      const url = generateServiceUrl({ id, methodEnum, serviceEnum });
+
+      /*
+       * Mock a single 200 framework response from
+       * the generated url with 'unknownField',
+       * rather than the expected 'framework' field.
        */
       nock(url).get('').times(1).reply(200, {
-        frameworkId: id,
+        unknownField: id,
       });
     });
     afterEach(() => {
       nock.cleanAll();
     });
-    test('should return an error', async () => {
+    /*
+     * PERFORM TEST
+     */
+    test("should return the expected error when the 'framework' field can not be found", async () => {
       /*
        * Arrange
        */
@@ -39,18 +69,16 @@ describe('entityServiceGetFramework', () => {
       /*
        * Act
        */
-      const stat = await entityService.getFramework({ frameworkId });
-      const { error } = stat;
-      let messageFound = '';
-
-      if (error) {
-        messageFound = (stat as IEntityServiceGetFrameworkOutputError).payload.message;
-      }
+      const stat = (await entityService.getFramework({
+        frameworkId,
+      })) as IEntityServiceGetFrameworkOutputError;
+      const errorFound = stat.error;
+      const messageFound = stat.payload.message;
 
       /*
        * Assert
        */
-      expect(error).toEqual(errorExpected);
+      expect(errorFound).toEqual(errorExpected);
       expect(messageFound).toEqual(messageExpected);
     });
   });

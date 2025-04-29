@@ -1,10 +1,6 @@
 import { MethodEnum, ServiceEnum, TargetFieldEnum } from '@app-lcs/core/config';
 import { fetchGetFieldById } from '@app-lcs/core/fetch';
-import {
-  IAdminServiceGetStatus,
-  IAdminServiceGetStatusOutputError,
-  IAdminServiceGetStatusOutputSuccess,
-} from '@app-lcs/interfaces/core/services';
+import { IAdminServiceGetStatus } from '@app-lcs/interfaces/core/services';
 
 /**
  * adminServiceGetStatus

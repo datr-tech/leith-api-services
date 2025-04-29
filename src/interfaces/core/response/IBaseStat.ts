@@ -1,4 +1,4 @@
 export interface IBaseStat {
   error: boolean;
-  payload: Object;
+  payload: object;
 }

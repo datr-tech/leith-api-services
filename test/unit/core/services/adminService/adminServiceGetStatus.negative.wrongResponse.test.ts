@@ -5,12 +5,11 @@ import { IAdminServiceGetStatusOutputError } from '@app-lcs/interfaces/core/serv
 import { Types } from 'mongoose';
 import nock from 'nock';
 
-
 /**
  * adminServiceGetStatus.negative.wrongResponse
  *
  * A single test of 'adminService.getStatus', where
- * the assocated API will be mocked within the 'beforeAll'
+ * the associated API will be mocked within the 'beforeAll'
  * function to return a positive, though incorrectly named
  * response, leading to a "wrong response" error.
  *
@@ -30,24 +29,24 @@ describe('adminServiceGetStatus', () => {
        * url, whose responses will be mocked using 'Nock'. The
        * ObjectId value will also be used within the unit test,
        * itself, being passed, ultimately, to 'getStatus' as
-			 * the expected param, 'statusId'.
+       * the expected param, 'statusId'.
        */
-			id = new Types.ObjectId();
-			const methodEnum = MethodEnum.status;
-			const serviceEnum = ServiceEnum.admin;
-      
-			/*
+      id = new Types.ObjectId();
+      const methodEnum = MethodEnum.status;
+      const serviceEnum = ServiceEnum.admin;
+
+      /*
        * Generate a url, which will be used to
        * mock the expected 'adminService' call
        * (within the unit test defined below),
        * and where 'id' will be the expected param.
        */
-			const url = generateServiceUrl({ id, methodEnum, serviceEnum });
-     
-		 	/*
+      const url = generateServiceUrl({ id, methodEnum, serviceEnum });
+
+      /*
        * Mock a single 200 status response from
-			 * the generated url with 'unknownField',
-			 * rather than the expected 'status' field.
+       * the generated url with 'unknownField',
+       * rather than the expected 'status' field.
        */
       nock(url).get('').times(1).reply(200, {
         unknownField: id,
@@ -70,9 +69,11 @@ describe('adminServiceGetStatus', () => {
       /*
        * Act
        */
-      const stat = await adminService.getStatus({ statusId }) as IAdminServiceGetStatusOutputError;
+      const stat = (await adminService.getStatus({
+        statusId,
+      })) as IAdminServiceGetStatusOutputError;
       const errorFound = stat.error;
-			const messageFound = stat.payload.message;
+      const messageFound = stat.payload.message;
 
       /*
        * Assert

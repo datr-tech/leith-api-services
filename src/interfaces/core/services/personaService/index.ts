@@ -1,0 +1,16 @@
+export { IPersonaServiceGetOrganisation } from './IPersonaServiceGetOrganisation';
+export { IPersonaServiceGetOrganisationInput } from './IPersonaServiceGetOrganisationInput';
+export { IPersonaServiceGetOrganisationOutput } from './IPersonaServiceGetOrganisationOutput';
+export { IPersonaServiceGetOrganisationOutputError } from './IPersonaServiceGetOrganisationOutputError';
+export { IPersonaServiceGetOrganisationOutputSuccess } from './IPersonaServiceGetOrganisationOutputSuccess';
+export { IPersonaServiceHasOrganisation } from './IPersonaServiceHasOrganisation';
+export { IPersonaServiceHasOrganisationInput } from './IPersonaServiceHasOrganisationInput';
+export { IPersonaServiceHasOrganisationOutput } from './IPersonaServiceHasOrganisationOutput';
+export { IPersonaServiceHasUser } from './IPersonaServiceHasUser';
+export { IPersonaServiceHasUserInput } from './IPersonaServiceHasUserInput';
+export { IPersonaServiceHasUserOutput } from './IPersonaServiceHasUserOutput';
+export { IPersonaServiceIsUserValid } from './IPersonaServiceIsUserValid';
+export { IPersonaServiceIsUserValidInput } from './IPersonaServiceIsUserValidInput';
+export { IPersonaServiceIsUserValidOutput } from './IPersonaServiceIsUserValidOutput';
+export { IPersonaServiceIsUserValidOutputError } from './IPersonaServiceIsUserValidOutputError';
+export { IPersonaServiceIsUserValidOutputSuccess } from './IPersonaServiceIsUserValidOutputSuccess';

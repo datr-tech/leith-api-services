@@ -9,7 +9,7 @@ import nock from 'nock';
  * adminServiceGetStatus.negative.notFound
  *
  * A single test of 'adminService.getStatus', where
- * a 404 (not found) response from the assocated API
+ * a 404 (not found) response from the associated API
  * will be mocked within the 'beforeAll' function.
  *
  * @author Datr.Tech Admin <admin@datr.tech>
@@ -28,7 +28,7 @@ describe('adminServiceGetStatus', () => {
        * url, whose responses will be mocked using 'Nock'. The
        * ObjectId value will also be used within the unit test,
        * itself, being passed, ultimately, to 'getStatus' as
-			 * the expected param, 'statusId'.
+       * the expected param, 'statusId'.
        */
       id = new Types.ObjectId();
       const methodEnum = MethodEnum.status;
@@ -64,7 +64,9 @@ describe('adminServiceGetStatus', () => {
       /*
        * Act
        */
-      const stat = await adminService.getStatus({ statusId }) as IAdminServiceGetStatusOutputError;
+      const stat = (await adminService.getStatus({
+        statusId,
+      })) as IAdminServiceGetStatusOutputError;
       const errorFound = stat.error;
       const messageFound = stat.payload.message;
 

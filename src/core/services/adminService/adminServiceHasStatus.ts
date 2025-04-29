@@ -1,7 +1,5 @@
+import { IAdminServiceHasStatus } from '@app-lcs/interfaces/core/services';
 import { adminServiceGetStatus } from './adminServiceGetStatus';
 
-export const adminServiceHasStatus = async ({ statusId }) => {
-  const adminStatus = await adminServiceGetStatus({ statusId });
-
-  return !!adminStatus;
-};
+export const adminServiceHasStatus: IAdminServiceHasStatus = async ({ statusId }) =>
+  (await adminServiceGetStatus({ statusId })).error === false;
