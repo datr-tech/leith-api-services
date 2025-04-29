@@ -1,6 +1,9 @@
 import { MethodEnum, ServiceEnum, TargetFieldEnum } from '@app-lcs/core/config';
 import { fetchGetFieldById } from '@app-lcs/core/fetch';
-import { IPersonaServiceIsUserValid } from '@app-lcs/interfaces/core/services';
+import {
+  IPersonaServiceIsUserValid,
+  IPersonaServiceIsUserValidOutput,
+} from '@app-lcs/interfaces/core/services';
 
 /**
  * personaServiceIsUserValid
@@ -19,7 +22,7 @@ import { IPersonaServiceIsUserValid } from '@app-lcs/interfaces/core/services';
  */
 export const personaServiceIsUserValid: IPersonaServiceIsUserValid = async ({
   userId,
-}) => {
+}): Promise<IPersonaServiceIsUserValidOutput> => {
   /*
    * Assemble the required params for the 'fetchGetFieldById' call.
    */
@@ -32,10 +35,10 @@ export const personaServiceIsUserValid: IPersonaServiceIsUserValid = async ({
    * 'targetFieldEnum, within the standard
    * response object, stat.
    */
-  return await fetchGetFieldById({
+  return (await fetchGetFieldById({
     id: userId,
     methodEnum,
     serviceEnum,
     targetFieldEnum,
-  });
+  })) as IPersonaServiceIsUserValidOutput;
 };

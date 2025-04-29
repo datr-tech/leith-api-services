@@ -1,6 +1,6 @@
 import { IEntityServiceGetResourceInput } from './IEntityServiceGetResourceInput';
-import { IEntityServiceGetResourceOutput } from './IEntityServiceGetResourceOutput';
+import { IEntityServiceGetResourceOutputPromise } from './IEntityServiceGetResourceOutputPromise';
 
 export interface IEntityServiceGetResource {
-  (args: IEntityServiceGetResourceInput): Promise<IEntityServiceGetResourceOutput>;
+  (args: IEntityServiceGetResourceInput): IEntityServiceGetResourceOutputPromise;
 }

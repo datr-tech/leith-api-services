@@ -1,3 +1,3 @@
-import { IProcThreadGetThreadInput } from './IProcThreadGetThreadInput';
+import { IProcServiceGetThreadInput } from './IProcServiceGetThreadInput';
 
-export type IProcThreadHasThreadInput = IProcThreadGetThreadInput;
+export type IProcServiceHasThreadInput = IProcServiceGetThreadInput;

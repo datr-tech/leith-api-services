@@ -1,6 +1,6 @@
 import { IDolomiteServiceGetJourneyInput } from './IDolomiteServiceGetJourneyInput';
-import { IDolomiteServiceGetJourneyOutput } from './IDolomiteServiceGetJourneyOutput';
+import { IDolomiteServiceGetJourneyOutputPromise } from './IDolomiteServiceGetJourneyOutputPromise';
 
 export interface IDolomiteServiceGetJourney {
-  (args: IDolomiteServiceGetJourneyInput): Promise<IDolomiteServiceGetJourneyOutput>;
+  (args: IDolomiteServiceGetJourneyInput): IDolomiteServiceGetJourneyOutputPromise;
 }

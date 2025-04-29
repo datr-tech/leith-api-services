@@ -1,6 +1,6 @@
-import { IProcProcessHasProcessInput } from './IProcProcessHasProcessInput';
-import { IProcProcessHasProcessOutput } from './IProcProcessHasProcessOutput';
+import { IProcServiceHasProcessInput } from './IProcServiceHasProcessInput';
+import { IProcServiceHasProcessOutput } from './IProcServiceHasProcessOutput';
 
-export interface IProcProcessHasProcess {
-  (args: IProcProcessHasProcessInput): Promise<IProcProcessHasProcessOutput>;
+export interface IProcServiceHasProcess {
+  (args: IProcServiceHasProcessInput): Promise<IProcServiceHasProcessOutput>;
 }

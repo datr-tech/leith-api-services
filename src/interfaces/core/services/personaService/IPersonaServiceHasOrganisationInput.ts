@@ -1,4 +1,3 @@
-import { IPersonaOrganisationGetOrganisationInput } from './IPersonaOrganisationGetOrganisationInput';
+import { IPersonaServiceGetOrganisationInput } from './IPersonaServiceGetOrganisationInput';
 
-export type IPersonaOrganisationHasOrganisationInput =
-  IPersonaOrganisationGetOrganisationInput;
+export type IPersonaServiceHasOrganisationInput = IPersonaServiceGetOrganisationInput;

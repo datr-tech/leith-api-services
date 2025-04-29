@@ -1,6 +1,9 @@
 import { MethodEnum, ServiceEnum, TargetFieldEnum } from '@app-lcs/core/config';
 import { fetchGetFieldById } from '@app-lcs/core/fetch';
-import { IDolomiteServiceGetJourney } from '@app-lcs/interfaces/core/services';
+import {
+  IDolomiteServiceGetJourney,
+  IDolomiteServiceGetJourneyOutput,
+} from '@app-lcs/interfaces/core/services';
 
 /**
  * dolomiteServiceGetJourney
@@ -19,7 +22,7 @@ import { IDolomiteServiceGetJourney } from '@app-lcs/interfaces/core/services';
  */
 export const dolomiteServiceGetJourney: IDolomiteServiceGetJourney = async ({
   journeyId,
-}) => {
+}): Promise<IDolomiteServiceGetJourneyOutput> => {
   /*
    * Assemble the required params for the 'fetchGetFieldById' call.
    */
@@ -32,10 +35,10 @@ export const dolomiteServiceGetJourney: IDolomiteServiceGetJourney = async ({
    * 'targetFieldEnum, within the standard
    * response object, stat.
    */
-  return await fetchGetFieldById({
+  return (await fetchGetFieldById({
     id: journeyId,
     methodEnum,
     serviceEnum,
     targetFieldEnum,
-  });
+  })) as IDolomiteServiceGetJourneyOutput;
 };

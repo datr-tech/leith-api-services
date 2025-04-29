@@ -1,8 +1,8 @@
 import { IPersonaServiceGetOrganisationInput } from './IPersonaServiceGetOrganisationInput';
-import { IPersonaServiceGetOrganisationOutput } from './IPersonaServiceGetOrganisationOutput';
+import { IPersonaServiceGetOrganisationOutputPromise } from './IPersonaServiceGetOrganisationOutputPromise';
 
 export interface IPersonaServiceGetOrganisation {
   (
     args: IPersonaServiceGetOrganisationInput,
-  ): Promise<IPersonaServiceGetOrganisationOutput>;
+  ): IPersonaServiceGetOrganisationOutputPromise;
 }

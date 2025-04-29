@@ -1,4 +1,4 @@
-export interface IPersonaServiceGetUserOutputError {
+export interface IPersonaServiceIsUserValidOutputError {
   error: true;
   payload: {
     message: string;

@@ -1,6 +1,6 @@
 import { IProcServiceGetThreadInput } from './IProcServiceGetThreadInput';
-import { IProcServiceGetThreadOutput } from './IProcServiceGetThreadOutput';
+import { IProcServiceGetThreadOutputPromise } from './IProcServiceGetThreadOutputPromise';
 
 export interface IProcServiceGetThread {
-  (args: IProcServiceGetThreadInput): Promise<IProcServiceGetThreadOutput>;
+  (args: IProcServiceGetThreadInput): IProcServiceGetThreadOutputPromise;
 }

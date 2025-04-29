@@ -1,6 +1,6 @@
 import { IEntityServiceGetFrameworkInput } from './IEntityServiceGetFrameworkInput';
-import { IEntityServiceGetFrameworkOutput } from './IEntityServiceGetFrameworkOutput';
+import { IEntityServiceGetFrameworkOutputPromise } from './IEntityServiceGetFrameworkOutputPromise';
 
 export interface IEntityServiceGetFramework {
-  (args: IEntityServiceGetFrameworkInput): Promise<IEntityServiceGetFrameworkOutput>;
+  (args: IEntityServiceGetFrameworkInput): IEntityServiceGetFrameworkOutputPromise;
 }

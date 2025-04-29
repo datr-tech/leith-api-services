@@ -1,6 +1,6 @@
-import { IProcThreadHasThreadInput } from './IProcThreadHasThreadInput';
-import { IProcThreadHasThreadOutput } from './IProcThreadHasThreadOutput';
+import { IProcServiceHasThreadInput } from './IProcServiceHasThreadInput';
+import { IProcServiceHasThreadOutput } from './IProcServiceHasThreadOutput';
 
-export interface IProcThreadHasThread {
-  (args: IProcThreadHasThreadInput): Promise<IProcThreadHasThreadOutput>;
+export interface IProcServiceHasThread {
+  (args: IProcServiceHasThreadInput): Promise<IProcServiceHasThreadOutput>;
 }

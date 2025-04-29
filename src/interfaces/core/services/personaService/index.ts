@@ -2,6 +2,7 @@ export { IPersonaServiceGetOrganisation } from './IPersonaServiceGetOrganisation
 export { IPersonaServiceGetOrganisationInput } from './IPersonaServiceGetOrganisationInput';
 export { IPersonaServiceGetOrganisationOutput } from './IPersonaServiceGetOrganisationOutput';
 export { IPersonaServiceGetOrganisationOutputError } from './IPersonaServiceGetOrganisationOutputError';
+export { IPersonaServiceGetOrganisationOutputPromise } from './IPersonaServiceGetOrganisationOutputPromise';
 export { IPersonaServiceGetOrganisationOutputSuccess } from './IPersonaServiceGetOrganisationOutputSuccess';
 export { IPersonaServiceHasOrganisation } from './IPersonaServiceHasOrganisation';
 export { IPersonaServiceHasOrganisationInput } from './IPersonaServiceHasOrganisationInput';
@@ -13,4 +14,5 @@ export { IPersonaServiceIsUserValid } from './IPersonaServiceIsUserValid';
 export { IPersonaServiceIsUserValidInput } from './IPersonaServiceIsUserValidInput';
 export { IPersonaServiceIsUserValidOutput } from './IPersonaServiceIsUserValidOutput';
 export { IPersonaServiceIsUserValidOutputError } from './IPersonaServiceIsUserValidOutputError';
+export { IPersonaServiceIsUserValidOutputPromise } from './IPersonaServiceIsUserValidOutputPromise';
 export { IPersonaServiceIsUserValidOutputSuccess } from './IPersonaServiceIsUserValidOutputSuccess';

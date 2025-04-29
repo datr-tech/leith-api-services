@@ -1,6 +1,6 @@
-import { IPersonaServiceGetUserOutputError } from './IPersonaServiceGetUserOutputError';
-import { IPersonaServiceGetUserOutputSuccess } from './IPersonaServiceGetUserOutputSuccess';
+import { IPersonaServiceIsUserValidOutputError } from './IPersonaServiceIsUserValidOutputError';
+import { IPersonaServiceIsUserValidOutputSuccess } from './IPersonaServiceIsUserValidOutputSuccess';
 
-export type IPersonaServiceGetUserOutput =
-  | IPersonaServiceGetUserOutputError
-  | IPersonaServiceGetUserOutputSuccess;
+export type IPersonaServiceIsUserValidOutput =
+  | IPersonaServiceIsUserValidOutputError
+  | IPersonaServiceIsUserValidOutputSuccess;

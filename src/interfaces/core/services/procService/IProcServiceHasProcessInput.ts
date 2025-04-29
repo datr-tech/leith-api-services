@@ -1,3 +1,3 @@
-import { IProcProcessGetProcessInput } from './IProcProcessGetProcessInput';
+import { IProcServiceGetProcessInput } from './IProcServiceGetProcessInput';
 
-export type IProcProcessHasProcessInput = IProcProcessGetProcessInput;
+export type IProcServiceHasProcessInput = IProcServiceGetProcessInput;

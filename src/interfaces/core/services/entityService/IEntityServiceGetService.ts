@@ -1,6 +1,6 @@
 import { IEntityServiceGetServiceInput } from './IEntityServiceGetServiceInput';
-import { IEntityServiceGetServiceOutput } from './IEntityServiceGetServiceOutput';
+import { IEntityServiceGetServiceOutputPromise } from './IEntityServiceGetServiceOutputPromise';
 
 export interface IEntityServiceGetService {
-  (args: IEntityServiceGetServiceInput): Promise<IEntityServiceGetServiceOutput>;
+  (args: IEntityServiceGetServiceInput): IEntityServiceGetServiceOutputPromise;
 }

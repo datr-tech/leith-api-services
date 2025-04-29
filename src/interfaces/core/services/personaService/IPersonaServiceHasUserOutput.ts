@@ -1,1 +1,1 @@
-export type IPersonaUserHasUserOutput = boolean;
+export type IPersonaServiceHasUserOutput = boolean;

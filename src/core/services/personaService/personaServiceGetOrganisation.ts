@@ -1,6 +1,9 @@
 import { MethodEnum, ServiceEnum, TargetFieldEnum } from '@app-lcs/core/config';
 import { fetchGetFieldById } from '@app-lcs/core/fetch';
-import { IPersonaServiceGetOrganisation } from '@app-lcs/interfaces/core/services';
+import {
+  IPersonaServiceGetOrganisation,
+  IPersonaServiceGetOrganisationOutput,
+} from '@app-lcs/interfaces/core/services';
 
 /**
  * personaServiceGetOrganisation
@@ -19,7 +22,7 @@ import { IPersonaServiceGetOrganisation } from '@app-lcs/interfaces/core/service
  */
 export const personaServiceGetOrganisation: IPersonaServiceGetOrganisation = async ({
   organisationId,
-}) => {
+}): Promise<IPersonaServiceGetOrganisationOutput> => {
   /*
    * Assemble the required params for the 'fetchGetFieldById' call.
    */
@@ -32,10 +35,10 @@ export const personaServiceGetOrganisation: IPersonaServiceGetOrganisation = asy
    * 'targetFieldEnum, within the standard
    * response object, stat.
    */
-  return await fetchGetFieldById({
+  return (await fetchGetFieldById({
     id: organisationId,
     methodEnum,
     serviceEnum,
     targetFieldEnum,
-  });
+  })) as IPersonaServiceGetOrganisationOutput;
 };

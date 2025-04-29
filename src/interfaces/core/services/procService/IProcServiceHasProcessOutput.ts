@@ -1,1 +1,1 @@
-export type IProcProcessHasProcessOutput = boolean;
+export type IProcServiceHasProcessOutput = boolean;

@@ -1,1 +1,1 @@
-export type IPersonaOrganisationHasOrganisationOutput = boolean;
+export type IPersonaServiceHasOrganisationOutput = boolean;

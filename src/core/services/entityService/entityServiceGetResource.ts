@@ -1,6 +1,9 @@
 import { MethodEnum, ServiceEnum, TargetFieldEnum } from '@app-lcs/core/config';
 import { fetchGetFieldById } from '@app-lcs/core/fetch';
-import { IEntityServiceGetResource } from '@app-lcs/interfaces/core/services';
+import {
+  IEntityServiceGetResource,
+  IEntityServiceGetResourceOutput,
+} from '@app-lcs/interfaces/core/services';
 
 /**
  * entityServiceGetResource
@@ -19,7 +22,7 @@ import { IEntityServiceGetResource } from '@app-lcs/interfaces/core/services';
  */
 export const entityServiceGetResource: IEntityServiceGetResource = async ({
   resourceId,
-}) => {
+}): Promise<IEntityServiceGetResourceOutput> => {
   /*
    * Assemble the required params for the 'fetchGetFieldById' call.
    */
@@ -32,10 +35,10 @@ export const entityServiceGetResource: IEntityServiceGetResource = async ({
    * 'targetFieldEnum, within the standard
    * response object, stat.
    */
-  return await fetchGetFieldById({
+  return (await fetchGetFieldById({
     id: resourceId,
     methodEnum,
     serviceEnum,
     targetFieldEnum,
-  });
+  })) as IEntityServiceGetResourceOutput;
 };

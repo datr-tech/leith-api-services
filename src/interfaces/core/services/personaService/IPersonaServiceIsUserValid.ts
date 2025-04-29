@@ -1,6 +1,6 @@
-import { IPersonaServiceGetUserInput } from './IPersonaServiceGetUserInput';
-import { IPersonaServiceGetUserOutput } from './IPersonaServiceGetUserOutput';
+import { IPersonaServiceIsUserValidInput } from './IPersonaServiceIsUserValidInput';
+import { IPersonaServiceIsUserValidOutputPromise } from './IPersonaServiceIsUserValidOutputPromise';
 
-export interface IPersonaServiceGetUser {
-  (args: IPersonaServiceGetUserInput): Promise<IPersonaServiceGetUserOutput>;
+export interface IPersonaServiceIsUserValid {
+  (args: IPersonaServiceIsUserValidInput): IPersonaServiceIsUserValidOutputPromise;
 }

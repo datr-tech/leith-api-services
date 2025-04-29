@@ -1,1 +1,1 @@
-export type IProcThreadHasThreadOutput = boolean;
+export type IProcServiceHasThreadOutput = boolean;

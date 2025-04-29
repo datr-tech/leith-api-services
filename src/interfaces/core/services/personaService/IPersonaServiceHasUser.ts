@@ -1,6 +1,6 @@
-import { IPersonaUserHasUserInput } from './IPersonaUserHasUserInput';
-import { IPersonaUserHasUserOutput } from './IPersonaUserHasUserOutput';
+import { IPersonaServiceHasUserInput } from './IPersonaServiceHasUserInput';
+import { IPersonaServiceHasUserOutput } from './IPersonaServiceHasUserOutput';
 
-export interface IPersonaUserHasUser {
-  (args: IPersonaUserHasUserInput): Promise<IPersonaUserHasUserOutput>;
+export interface IPersonaServiceHasUser {
+  (args: IPersonaServiceHasUserInput): Promise<IPersonaServiceHasUserOutput>;
 }

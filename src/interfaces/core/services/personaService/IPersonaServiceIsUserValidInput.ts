@@ -1,5 +1,5 @@
 import { Types } from 'mongoose';
 
-export interface IPersonaServiceGetUserInput {
+export interface IPersonaServiceIsUserValidInput {
   userId: Types.ObjectId;
 }

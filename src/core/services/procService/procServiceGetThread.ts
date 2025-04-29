@@ -1,6 +1,9 @@
 import { MethodEnum, ServiceEnum, TargetFieldEnum } from '@app-lcs/core/config';
 import { fetchGetFieldById } from '@app-lcs/core/fetch';
-import { IProcServiceGetThread } from '@app-lcs/interfaces/core/services';
+import {
+  IProcServiceGetThread,
+  IProcServiceGetThreadOutput,
+} from '@app-lcs/interfaces/core/services';
 
 /**
  * procServiceGetThread
@@ -17,7 +20,9 @@ import { IProcServiceGetThread } from '@app-lcs/interfaces/core/services';
  * @author Datr.Tech Proc <proc@datr.tech>
  * @version 0.4.1
  */
-export const procServiceGetThread: IProcServiceGetThread = async ({ threadId }) => {
+export const procServiceGetThread: IProcServiceGetThread = async ({
+  threadId,
+}): Promise<IProcServiceGetThreadOutput> => {
   /*
    * Assemble the required params for the 'fetchGetFieldById' call.
    */
@@ -30,10 +35,10 @@ export const procServiceGetThread: IProcServiceGetThread = async ({ threadId }) 
    * 'targetFieldEnum, within the standard
    * response object, stat.
    */
-  return await fetchGetFieldById({
+  return (await fetchGetFieldById({
     id: threadId,
     methodEnum,
     serviceEnum,
     targetFieldEnum,
-  });
+  })) as IProcServiceGetThreadOutput;
 };

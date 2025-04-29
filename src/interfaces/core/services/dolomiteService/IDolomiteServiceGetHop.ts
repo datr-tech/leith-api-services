@@ -1,6 +1,6 @@
 import { IDolomiteServiceGetHopInput } from './IDolomiteServiceGetHopInput';
-import { IDolomiteServiceGetHopOutput } from './IDolomiteServiceGetHopOutput';
+import { IDolomiteServiceGetHopOutputPromise } from './IDolomiteServiceGetHopOutputPromise';
 
 export interface IDolomiteServiceGetHop {
-  (args: IDolomiteServiceGetHopInput): Promise<IDolomiteServiceGetHopOutput>;
+  (args: IDolomiteServiceGetHopInput): IDolomiteServiceGetHopOutputPromise;
 }

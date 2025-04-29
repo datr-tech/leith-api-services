@@ -1,6 +1,6 @@
 import { IProcServiceGetProcessInput } from './IProcServiceGetProcessInput';
-import { IProcServiceGetProcessOutput } from './IProcServiceGetProcessOutput';
+import { IProcServiceGetProcessOutputPromise } from './IProcServiceGetProcessOutputPromise';
 
 export interface IProcServiceGetProcess {
-  (args: IProcServiceGetProcessInput): Promise<IProcServiceGetProcessOutput>;
+  (args: IProcServiceGetProcessInput): IProcServiceGetProcessOutputPromise;
 }

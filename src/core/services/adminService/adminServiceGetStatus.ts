@@ -1,6 +1,9 @@
 import { MethodEnum, ServiceEnum, TargetFieldEnum } from '@app-lcs/core/config';
 import { fetchGetFieldById } from '@app-lcs/core/fetch';
-import { IAdminServiceGetStatus, IAdminServiceGetStatusOutput } from '@app-lcs/interfaces/core/services';
+import {
+  IAdminServiceGetStatus,
+  IAdminServiceGetStatusOutput,
+} from '@app-lcs/interfaces/core/services';
 
 /**
  * adminServiceGetStatus
@@ -17,7 +20,9 @@ import { IAdminServiceGetStatus, IAdminServiceGetStatusOutput } from '@app-lcs/i
  * @author Datr.Tech Admin <admin@datr.tech>
  * @version 0.4.1
  */
-export const adminServiceGetStatus: IAdminServiceGetStatus = async ({ statusId }): Promise<IAdminServiceGetStatusOutput> => {
+export const adminServiceGetStatus: IAdminServiceGetStatus = async ({
+  statusId,
+}): Promise<IAdminServiceGetStatusOutput> => {
   /*
    * Assemble the required params for the 'fetchGetFieldById' call.
    */
@@ -30,10 +35,10 @@ export const adminServiceGetStatus: IAdminServiceGetStatus = async ({ statusId }
    * 'targetFieldEnum, within the standard
    * response object, stat.
    */
-  return await fetchGetFieldById({
+  return (await fetchGetFieldById({
     id: statusId,
     methodEnum,
     serviceEnum,
     targetFieldEnum,
-  }) as IAdminServiceGetStatusOutput;
+  })) as IAdminServiceGetStatusOutput;
 };
