@@ -1,6 +1,10 @@
+import nock from 'nock';
 import { adminService } from '@app-lcs/services';
 
-describe('adminService', () => {
+describe('adminServiceGetStatus', () => {
+	beforeAll(() => {
+		nock('http://zombo.com').get('/').times(4).reply(200, 'Ok')
+	});
   describe('positive', () => {
     test('should contain the expected number of functions', () => {
       // Arrange
