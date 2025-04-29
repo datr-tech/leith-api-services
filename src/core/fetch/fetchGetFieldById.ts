@@ -3,6 +3,7 @@ import { baseStat } from '@app-lcs/core/response';
 import { generateServiceUrl } from '@app-lcs/core/url';
 import {
   IFetchGetFieldById,
+  IFetchGetFieldByIdOutput,
   IFetchGetFieldByIdOutputError,
   IFetchGetFieldByIdOutputSuccess,
 } from '@app-lcs/interfaces/core/fetch';
@@ -32,7 +33,7 @@ export const fetchGetFieldById: IFetchGetFieldById = async ({
   methodEnum,
   serviceEnum,
   targetFieldEnum,
-}) => {
+}): Promise<IFetchGetFieldByIdOutput> => {
   const stat = { ...baseStat };
 
   try {

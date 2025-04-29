@@ -1,6 +1,6 @@
-import { IFetchFieldByIdInput } from './IFetchFieldByIdInput';
-import { IFetchFieldByIdOutput } from './IFetchFieldByIdOutput';
+import { IFetchGetFieldByIdInput } from './IFetchGetFieldByIdInput';
+import { IFetchGetFieldByIdOutput } from './IFetchGetFieldByIdOutput';
 
-export interface IFetchFieldById {
-  (args: IFetchFieldByIdInput): Promise<IFetchFieldByIdOutput>;
+export interface IFetchGetFieldById {
+  (args: IFetchGetFieldByIdInput): Promise<IFetchGetFieldByIdOutput>;
 }

@@ -1,6 +1,6 @@
 import { IAdminServiceGetStatusInput } from './IAdminServiceGetStatusInput';
-import { IAdminServiceGetStatusOutput } from './IAdminServiceGetStatusOutput';
+import { IAdminServiceGetStatusOutputPromise } from './IAdminServiceGetStatusOutputPromise';
 
 export interface IAdminServiceGetStatus {
-  (args: IAdminServiceGetStatusInput): Promise<IAdminServiceGetStatusOutput>;
+  (args: IAdminServiceGetStatusInput): IAdminServiceGetStatusOutputPromise;
 }

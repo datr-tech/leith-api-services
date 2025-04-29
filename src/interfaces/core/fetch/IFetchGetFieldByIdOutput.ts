@@ -1,6 +1,6 @@
-import { IFetchFieldByIdOutputError } from './IFetchFieldByIdOutputError';
-import { IFetchFieldByIdOutputSuccess } from './IFetchFieldByIdOutputSuccess';
+import { IFetchGetFieldByIdOutputError } from './IFetchGetFieldByIdOutputError';
+import { IFetchGetFieldByIdOutputSuccess } from './IFetchGetFieldByIdOutputSuccess';
 
-export type IFetchFieldByIdOutput =
-  | IFetchFieldByIdOutputError
-  | IFetchFieldByIdOutputSuccess;
+export type IFetchGetFieldByIdOutput =
+  | IFetchGetFieldByIdOutputError
+  | IFetchGetFieldByIdOutputSuccess;
