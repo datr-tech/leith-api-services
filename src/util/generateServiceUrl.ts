@@ -1,6 +1,5 @@
 import { MethodEnum, ServiceEnum } from '@app-lcs/config';
 import { IGenerateServiceUrl } from '@app-lcs/interfaces/util';
-import { baseStat } from '@app-lcs/util/baseStat';
 import { ports } from '@datr.tech/leith-config-api-ports';
 
 /**
@@ -31,8 +30,6 @@ export const generateServiceUrl: IGenerateServiceUrl = ({
   host = 'localhost',
   version = 1,
 }) => {
-  const stat = { ...baseStat };
-
   /*
    * Convert the received enum params,
    * 'methodEnum' and 'serviceEnum, to strings.

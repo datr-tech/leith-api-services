@@ -2,8 +2,9 @@ import { fetchDefaultsGet, MethodEnum, ServiceEnum } from '@app-lcs/config';
 import {
   IAdminServiceGetStatus,
   IAdminServiceGetStatusOutputError,
-} from '@app-lcs/interfaces/adminService';
-import { baseStat } from '@app-lcs/utils';
+  IAdminServiceGetStatusOutputSuccess,
+} from '@app-lcs/interfaces/services/adminService';
+import { baseStat, generateServiceUrl } from '@app-lcs/util';
 
 /**
  * adminServiceGetStatus
