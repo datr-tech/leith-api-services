@@ -1,0 +1,1 @@
+export { generateServiceUrl } from './generateServiceUrl';

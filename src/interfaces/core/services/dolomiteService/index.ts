@@ -1,0 +1,10 @@
+export { IDolomiteServiceGetHop } from './IDolomiteServiceGetHop';
+export { IDolomiteServiceGetHopInput } from './IDolomiteServiceGetHopInput';
+export { IDolomiteServiceGetHopOutput } from './IDolomiteServiceGetHopOutput';
+export { IDolomiteServiceGetHopOutputError } from './IDolomiteServiceGetHopOutputError';
+export { IDolomiteServiceGetHopOutputSuccess } from './IDolomiteServiceGetHopOutputSuccess';
+export { IDolomiteServiceGetJourney } from './IDolomiteServiceGetJourney';
+export { IDolomiteServiceGetJourneyInput } from './IDolomiteServiceGetJourneyInput';
+export { IDolomiteServiceGetJourneyOutput } from './IDolomiteServiceGetJourneyOutput';
+export { IDolomiteServiceGetJourneyOutputError } from './IDolomiteServiceGetJourneyOutputError';
+export { IDolomiteServiceGetJourneyOutputSuccess } from './IDolomiteServiceGetJourneyOutputSuccess';

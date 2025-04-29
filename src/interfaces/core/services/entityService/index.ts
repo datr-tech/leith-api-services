@@ -1,0 +1,15 @@
+export { IEntityServiceGetFramework } from './IEntityServiceGetFramework';
+export { IEntityServiceGetFrameworkInput } from './IEntityServiceGetFrameworkInput';
+export { IEntityServiceGetFrameworkOutput } from './IEntityServiceGetFrameworkOutput';
+export { IEntityServiceGetFrameworkOutputError } from './IEntityServiceGetFrameworkOutputError';
+export { IEntityServiceGetFrameworkOutputSuccess } from './IEntityServiceGetFrameworkOutputSuccess';
+export { IEntityServiceGetResource } from './IEntityServiceGetResource';
+export { IEntityServiceGetResourceInput } from './IEntityServiceGetResourceInput';
+export { IEntityServiceGetResourceOutput } from './IEntityServiceGetResourceOutput';
+export { IEntityServiceGetResourceOutputError } from './IEntityServiceGetResourceOutputError';
+export { IEntityServiceGetResourceOutputSuccess } from './IEntityServiceGetResourceOutputSuccess';
+export { IEntityServiceGetService } from './IEntityServiceGetService';
+export { IEntityServiceGetServiceInput } from './IEntityServiceGetServiceInput';
+export { IEntityServiceGetServiceOutput } from './IEntityServiceGetServiceOutput';
+export { IEntityServiceGetServiceOutputError } from './IEntityServiceGetServiceOutputError';
+export { IEntityServiceGetServiceOutputSuccess } from './IEntityServiceGetServiceOutputSuccess';

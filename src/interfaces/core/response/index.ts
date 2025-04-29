@@ -1,0 +1,1 @@
+export { IBaseStat } from './IBaseStat';

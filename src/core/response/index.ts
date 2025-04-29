@@ -1,0 +1,1 @@
+export { baseStat } from './baseStat';
